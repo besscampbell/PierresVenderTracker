@@ -43,5 +43,22 @@ namespace VendorTracker.Tests
             Assert.AreEqual(date, result.Date);
             Assert.AreEqual(notes, result.Notes);
         }
+
+        [TestMethod]
+        public void GetIntProperties_ReturnOrderProperties_Int()
+        {
+            //Arrange
+            int pastries = 36;
+            int loaves = 24;
+            int totalCost = 140;
+            DateTime date = new DateTime(2020,12,18);
+            date.ToString();
+            //Act
+            Order result = new Order("title", date, pastries, loaves, totalCost);
+            //Assert
+            Assert.AreEqual(pastries, result.PastryOrder);
+            Assert.AreEqual(loaves, result.BreadOrder);
+            Assert.AreEqual(totalCost, result.TotalCost);
+        }
     }
 }
