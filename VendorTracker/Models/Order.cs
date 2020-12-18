@@ -20,5 +20,6 @@ namespace VendorTracker.Models
             TotalCost = totalCost;
             Notes = notes;
         }
+        
     }
 }
