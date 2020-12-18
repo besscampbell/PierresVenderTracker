@@ -83,5 +83,24 @@ namespace VendorTrackerTests
             //Assert
             Assert.AreEqual(result, vendBio);
         }
+
+        [TestMethod]
+        public void AddOrder_ConnectsTheOrderToTheVendor_OrderList()
+        {
+            DateTime date = new DateTime(2020,12,18);
+            DateTime date2 = new DateTime(2020,12,24);
+            Order newWorldOrder = new Order("title", date, 36, 24, 140, "notes");
+            Order oldWorldOrder = new Order("title2", date2, 78, 10, 165, "notez");
+            List<Order> orderList = new List<Order> { newWorldOrder, oldWorldOrder };
+            string vendName = "Suzie's Cafe";
+            string vendBio = "Open for breakfast and lunch";
+            Vendor suzies = new Vendor(vendName, vendBio);
+            suzies.AddOrder(newWorldOrder);
+            suzies.AddOrder(oldWorldOrder);
+            //Act
+            List<Order> result = suzies.Orders;
+            //Assert
+            CollectionAssert.AreEqual(orderList, result);
+        }
     }
 }
