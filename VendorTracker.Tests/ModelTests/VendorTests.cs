@@ -45,7 +45,7 @@ namespace VendorTrackerTests
         }
 
         [TestMethod]
-        public void etAll_ReturnsAllInstancesOfVendor_VendorList()
+        public void GetAll_ReturnsAllInstancesOfVendor_VendorList()
         {
             //Arrange
             Vendor suzies = new Vendor("Suzie's Cafe");

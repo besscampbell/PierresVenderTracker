@@ -22,9 +22,7 @@ namespace VendorTracker.Models
 
         public static List<Vendor> GetAll()
         {
-            Vendor suzies = new Vendor("Suzie's Cafe");
-            List<Vendor> wrongAnswer = new List<Vendor> {suzies};
-            return wrongAnswer;
+            return _instances;
         }
     }
 }
