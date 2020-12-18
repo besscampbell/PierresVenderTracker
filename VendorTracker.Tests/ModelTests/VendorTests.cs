@@ -25,7 +25,8 @@ namespace VendorTrackerTests
         {
             //Arrange
             string vendName = "Suzie's Cafe";
-            Vendor suzies = new Vendor(vendName);
+             string vendBio = "Open for breakfast and lunch";
+            Vendor suzies = new Vendor(vendName, vendBio);
             //Act
             string result = suzies.Name;
             //Assert
@@ -37,7 +38,8 @@ namespace VendorTrackerTests
         {
             //Arrange=
             string vendName = "Suzie's Cafe";
-            Vendor suzies = new Vendor(vendName);
+             string vendBio = "Open for breakfast and lunch";
+            Vendor suzies = new Vendor(vendName, vendBio);
             //Act
             int result = suzies.Id;
             //Assert
@@ -48,8 +50,8 @@ namespace VendorTrackerTests
         public void GetAll_ReturnsAllInstancesOfVendor_VendorList()
         {
             //Arrange
-            Vendor suzies = new Vendor("Suzie's Cafe");
-            Vendor georgies = new Vendor("Georgie's Pizzeria");
+            Vendor suzies = new Vendor("Suzie's Cafe", "Open for breakfast and lunch.");
+            Vendor georgies = new Vendor("Georgie's Pizzeria", "Pizza pies flyin high");
             List<Vendor> vendList = new List<Vendor> { suzies, georgies };
             //Act
             List<Vendor> result = Vendor.GetAll();
@@ -61,8 +63,8 @@ namespace VendorTrackerTests
         public void Find_ReturnVendorById_Vendor()
         {
            //Arrange
-            Vendor suzies = new Vendor("Suzie's Cafe");
-            Vendor georgies = new Vendor("Georgie's Pizzeria");
+            Vendor suzies = new Vendor("Suzie's Cafe", "Open for breakfast and lunch.");
+            Vendor georgies = new Vendor("Georgie's Pizzeria", "Pizza pies flyin high");
             //Act
             Vendor result = Vendor.Find(2);
             //Assert
