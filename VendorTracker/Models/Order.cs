@@ -34,14 +34,12 @@ namespace VendorTracker.Models
 
         public static List<Order> GetAll()
         {
-          DateTime date = new DateTime(2020,12,18);
-          date.ToString();
-          DateTime date2 = new DateTime(2020,12,24);
-          date2.ToString();
-          Order newWorldOrder2 = new Order("rad title", date, 36, 24, 140, "notes");
-          Order oldWorldOrder1 = new Order("cool title2", date2, 78, 10, 165, "notez");
           return _instances;
-          
+        }
+
+        public static void ClearAll()
+        {
+          _instances.Clear();
         }
         
     }

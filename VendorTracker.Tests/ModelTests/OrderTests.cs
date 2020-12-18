@@ -6,8 +6,13 @@ using VendorTracker.Models;
 namespace VendorTracker.Tests
 {
     [TestClass]
-    public class OrderTests 
+    public class OrderTests : IDisposable
     {
+        public void Dispose()
+        {
+            Order.ClearAll();
+        }
+        
         [TestMethod]
         public void OrderConstructor_CreateInstanceOf_Order()
         {
