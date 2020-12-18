@@ -68,5 +68,18 @@ namespace VendorTrackerTests
             //Assert
             Assert.AreEqual(result, georgies); 
         }
+
+        [TestMethod]
+        public void GetVendorBio_ReturnVendorBio_String()
+        {
+            //Arrange
+            string vendName = "Suzie's Cafe";
+            string vendBio = "Open for breakfast and lunch";
+            Vendor suzies = new Vendor(vendName, vendBio);
+            //Act
+            string result = suzies.Bio;
+            //Assert
+            Assert.AreEqual(result, vendName);
+        }
     }
 }
