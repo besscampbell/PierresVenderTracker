@@ -1,0 +1,17 @@
+@if (Model == 0)
+{
+    <p>"You currently do not have any vendors on your list."</p>;
+}
+@else
+{
+    <ol>
+    @foreach(Vendor vendor in List)
+    {
+      <li><a href="/vendors/@Model.Id">@Model.Name</a></li>  
+
+    }
+    </ol>
+}
+
+<a href="/vendors/new">Fill out new vendor form!</a><br>
+<a href="/">Return to Home</a>
