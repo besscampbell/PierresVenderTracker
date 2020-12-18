@@ -20,6 +20,14 @@ namespace VendorTracker.Models
             TotalCost = totalCost;
             Notes = notes;
         }
+        public Order(string title, DateTime date, int pastryOrder, int breadOrder, int totalCost)
+        {
+            Title = title;
+            Date = date;
+            PastryOrder = pastryOrder;
+            BreadOrder = breadOrder;
+            TotalCost = totalCost;
+        }
         
     }
 }
