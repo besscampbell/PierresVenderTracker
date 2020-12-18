@@ -18,5 +18,13 @@ namespace VendorTracker.Controllers
         {
             return View();
         }
+
+        [HttpPost("/vendors")]
+        public ActionResult Create(string vendName)
+        {
+            Vendor newVendor = new Vendor(vendName);
+            return RedirectToAction("Index");
+        }
+
     }
 }
