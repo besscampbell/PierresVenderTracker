@@ -25,5 +25,18 @@ namespace VendorTrackerTests
             //Assert
             Assert.AreEqual(result, vendName);
         }
+
+        [TestMethod]
+        public void GetId_ReturnVendorById_Int()
+        {
+            //Arrange=
+            string vendName = "Suzie's Cafe";
+            Vendor suzies = new Vendor(vendName);
+            //Act
+            int result = suzies.Id;
+            //Assert
+            Assert.AreEqual(result, 1);
+            
+        }
     }
 }
