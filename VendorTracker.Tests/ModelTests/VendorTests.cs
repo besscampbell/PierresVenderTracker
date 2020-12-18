@@ -18,7 +18,7 @@ namespace VendorTrackerTests
         public void GetVendorName_ReturnsVendorName_String()
         {
             //Arrange
-            string vendName = "Suzie's Cafe"
+            string vendName = "Suzie's Cafe";
             Vendor suzies = new Vendor(vendName);
             //Act
             string result = suzies.Name;

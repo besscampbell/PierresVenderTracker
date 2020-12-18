@@ -10,7 +10,7 @@ namespace VendorTracker.Models
 
         public Vendor(string name)
         {
-            // Name = name;
+            Name = name;
             _instances.Add(this);
             Id = _instances.Count;
         }
