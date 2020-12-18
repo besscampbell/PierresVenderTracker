@@ -27,5 +27,23 @@ namespace VendorTracker.Tests
             Assert.AreEqual(typeof(Order), newWorldOrder.GetType());
 
         }
+
+        [TestMethod]
+        public void GetProperties_ReturnOrderProperties_String()
+        {
+            //Arrange
+            string title = "Order for Suzies";
+            DateTime date = new DateTime(2020,12,18);
+            date.ToString();
+            string notes = "No delivery on Mondays";
+            //Act
+            Order result = new Order(title, date, 36, 24, 140, notes);
+            //Arrange
+            Assert.AreEqual(title, result.Title);
+            Assert.AreEqual(date, result.Date);
+            Assert.AreEqual(notes, result.Notes);
+
+
+        }
     }
 }
