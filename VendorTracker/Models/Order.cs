@@ -11,6 +11,8 @@ namespace VendorTracker.Models
         public int TotalCost { get; set; }
         public string Notes { get; set; }
 
+        private static List<Order> _instances = new List<Order> {};
+
         public Order(string title, DateTime date, int pastryOrder, int breadOrder, int totalCost, string notes)
         {
             Title = title;
@@ -19,6 +21,7 @@ namespace VendorTracker.Models
             BreadOrder = breadOrder;
             TotalCost = totalCost;
             Notes = notes;
+            _instances.Add(this);
         }
         public Order(string title, DateTime date, int pastryOrder, int breadOrder, int totalCost)
         {
@@ -27,6 +30,18 @@ namespace VendorTracker.Models
             PastryOrder = pastryOrder;
             BreadOrder = breadOrder;
             TotalCost = totalCost;
+        }
+
+        public static List<Order> GetAll()
+        {
+          DateTime date = new DateTime(2020,12,18);
+          date.ToString();
+          DateTime date2 = new DateTime(2020,12,24);
+          date2.ToString();
+          Order newWorldOrder2 = new Order("rad title", date, 36, 24, 140, "notes");
+          Order oldWorldOrder1 = new Order("cool title2", date2, 78, 10, 165, "notez");
+          return _instances;
+          
         }
         
     }
