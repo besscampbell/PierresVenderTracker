@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System;
 
 namespace VendorTracker.Models
 {
@@ -45,9 +44,7 @@ namespace VendorTracker.Models
 
         public void AddOrder(Order order)
         {
-            DateTime date = new DateTime(2020,12,24);
-            Order newWorldOrder = new Order("title", date, 36, 24, 140, "notes");
-            Orders.Add(newWorldOrder);
+            Orders.Add(order);
         }
     }
 }
