@@ -10,6 +10,7 @@ namespace VendorTracker.Models
         public int BreadOrder { get; set; }
         public int TotalCost { get; set; }
         public string Notes { get; set; }
+        public int Id { get; }
 
         private static List<Order> _instances = new List<Order> {};
 
@@ -22,6 +23,7 @@ namespace VendorTracker.Models
             TotalCost = totalCost;
             Notes = notes;
             _instances.Add(this);
+            Id = _instances.Count;
         }
         public Order(string title, DateTime date, int pastryOrder, int breadOrder, int totalCost)
         {
@@ -30,6 +32,8 @@ namespace VendorTracker.Models
             PastryOrder = pastryOrder;
             BreadOrder = breadOrder;
             TotalCost = totalCost;
+            _instances.Add(this);
+            Id = _instances.Count;
         }
 
         public static List<Order> GetAll()

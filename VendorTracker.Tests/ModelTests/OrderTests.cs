@@ -71,9 +71,7 @@ namespace VendorTracker.Tests
         {
             //Arrange
             DateTime date = new DateTime(2020,12,18);
-            date.ToString();
             DateTime date2 = new DateTime(2020,12,24);
-            date2.ToString();
             Order newWorldOrder = new Order("title", date, 36, 24, 140, "notes");
             Order oldWorldOrder = new Order("title2", date2, 78, 10, 165, "notez");
             List<Order> theList = new List<Order> { newWorldOrder, oldWorldOrder };
@@ -81,7 +79,20 @@ namespace VendorTracker.Tests
             List<Order> result = Order.GetAll();
             //Assert
             CollectionAssert.AreEqual(theList, result); 
-
         } 
+
+        [TestMethod]
+        public void Find_ReturnsCorrectOrder_Order()
+        {
+            //Arrange
+            DateTime date = new DateTime(2020,12,18);
+            DateTime date2 = new DateTime(2020,12,24);
+            Order newWorldOrder = new Order("title", date, 36, 24, 140, "notes");
+            Order oldWorldOrder = new Order("title2", date2, 78, 10, 165, "notez");
+            //Act
+            Order result = Order.Find(2);
+            //Assert
+            Assert.AreEqual(oldWorldOrder, result);
+        }
     }
 }
