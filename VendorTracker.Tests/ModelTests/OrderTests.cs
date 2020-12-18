@@ -11,7 +11,9 @@ namespace VendorTracker.Tests
         [TestMethod]
         public void OrderConstructor_CreateInstanceOf_Order()
         {
-            Order newWorldOrder = new Order("title", "notes", "12/18/2020", 36, 24, 140);
+            DateTime date = new DateTime(2020,12,18);
+            date.ToString();
+            Order newWorldOrder = new Order("title", date, 36, 24, 140, "notes");
             Assert.AreEqual(typeof(Order), newWorldOrder.GetType());
 
         }
