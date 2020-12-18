@@ -42,7 +42,19 @@ namespace VendorTrackerTests
             int result = suzies.Id;
             //Assert
             Assert.AreEqual(result, 1);
-            
+        }
+
+        [TestMethod]
+        public void etAll_ReturnsAllInstancesOfVendor_VendorList()
+        {
+            //Arrange
+            Vendor suzies = new Vendor("Suzie's Cafe");
+            Vendor georgies = new Vendor("Georgie's Pizzeria");
+            List<Vendor> vendList = new List<Vendor> { suzies, georgies };
+            //Act
+            List<Vendor> result = Vendor.GetAll();
+            //Assert
+            CollectionAssert.AreEqual(result, vendList);
         }
     }
 }

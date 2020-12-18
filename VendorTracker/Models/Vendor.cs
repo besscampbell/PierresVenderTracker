@@ -19,5 +19,12 @@ namespace VendorTracker.Models
         {
             _instances.Clear();
         }
+
+        public static List<Vendor> GetAll()
+        {
+            Vendor suzies = new Vendor("Suzie's Cafe");
+            List<Vendor> wrongAnswer = new List<Vendor> {suzies};
+            return wrongAnswer;
+        }
     }
 }
