@@ -42,8 +42,6 @@ namespace VendorTracker.Tests
             Assert.AreEqual(title, result.Title);
             Assert.AreEqual(date, result.Date);
             Assert.AreEqual(notes, result.Notes);
-
-
         }
     }
 }
