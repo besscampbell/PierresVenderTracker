@@ -1,12 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using VendorTracker.Models;
 
 namespace VendorTrackerTests
 {
     [TestClass]
-    public class VendorTests
+    public class VendorTests : IDisposable
     {
+        public void Dispose()
+        {
+            Vendor.ClearAll();
+        }
+        
         [TestMethod]
         public void VendorConstructor_CreatesInstanceOf_Vonder()
         {
