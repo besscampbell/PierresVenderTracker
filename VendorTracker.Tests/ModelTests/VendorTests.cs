@@ -79,7 +79,7 @@ namespace VendorTrackerTests
             //Act
             string result = suzies.Bio;
             //Assert
-            Assert.AreEqual(result, vendName);
+            Assert.AreEqual(result, vendBio);
         }
     }
 }
