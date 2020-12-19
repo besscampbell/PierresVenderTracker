@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System;
 using VendorTracker.Models;
 
 namespace VendorTracker.Controllers
@@ -29,8 +30,25 @@ namespace VendorTracker.Controllers
         [HttpGet("/vendors/{id}")]
         public ActionResult Show(int id)
         {
-            Vendor iChooseYou = Vendor.Find(id);
-            return View(iChooseYou);
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            Vendor choosenVendor = Vendor.Find(id);
+            List<Order> vendorOrders = choosenVendor.Orders;
+            model.Add("orders", vendorOrders);
+            model.Add("vendor", choosenVendor);
+            return View(model);
+        }
+
+        [HttpPost("/vendors/{id}/orders")]
+        public ActionResult Create(int vendorId, string title, DateTime orderDate, int pastryOrder, int breadOrder, int totalCost, string notes = "")
+        {
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            Vendor choosenVendor = Vendor.Find(vendorId);
+            Order newOrder = new Order(title, orderDate, pastryOrder, breadOrder, totalCost, notes);
+            choosenVendor.AddOrder(newOrder);
+            List<Order> vendorOrders = choosenVendor.Orders;
+            model.Add("orders", vendorOrders);
+            model.Add("vendor", choosenVendor);
+            return View("Show", model);
         }
 
     }
