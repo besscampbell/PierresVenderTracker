@@ -6,7 +6,7 @@
 
 ## Description
 
-  Independent project for Epicodus using C# and .NET framework utilizing MVC routes with RESTful conventions and an object within an object.
+  Independent project for Epicodus using C# and .NET framework utilizing MVC routes with RESTful conventions and an objects within an object. A site built for Pierre to keep track of his vendors and their orders.
 
 ## Setup/Installation Requirements
 
